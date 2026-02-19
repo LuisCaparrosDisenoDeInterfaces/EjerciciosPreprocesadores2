@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/* PARTE 1 ----------------------------------------------------------------------------*/
+/* */
+/* Botón  'primary' */
 .button-primary {
   background-color: blue;
   color: white;
@@ -6,6 +10,7 @@
   background-color: rgb(76.5, 76.5, 255);
 }
 
+/* Botón  'secondary' */
 .button-secondary {
   background-color: gray;
   color: black;
@@ -14,6 +19,7 @@
   background-color: rgb(166.25, 166.25, 166.25);
 }
 
+/* Botón  'danger' */
 .button-danger {
   background-color: red;
   color: white;
@@ -22,6 +28,9 @@
   background-color: rgb(255, 76.5, 76.5);
 }
 
+/**/
+/*PARTE 2 -------------------------------------------------------------------------------*/
+/**/
 .text-primary {
   color: #0000cc;
 }
@@ -46,6 +55,10 @@
   color: #00e600;
 }
 
+/**/
+/*PARTE 3 -----------------------------------------------------------------------------------------*/
+/**/
+/*--- Propiedad margin ---*/
 .margin-1 {
   margin: 0.5rem;
 }
@@ -66,6 +79,7 @@
   margin: 1.5rem;
 }
 
+/*--- Propiedad padding ---*/
 .padding-1 {
   padding: 0.5rem;
 }

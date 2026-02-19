@@ -4,8 +4,11 @@
 
 $buttons: primary blue white, secondary gray black, danger red white;
 
+/* PARTE 1 ----------------------------------------------------------------------------*/
+/* */
 @each $button in $buttons {
 
+    /* Botón  '#{list.nth($button, 1)}' */
     .button-#{list.nth($button, 1)} {
         background-color: list.nth($button, 2);
         color: list.nth($button, 3);
@@ -15,6 +18,10 @@ $buttons: primary blue white, secondary gray black, danger red white;
         }
     }
 }
+
+/**/
+/*PARTE 2 -------------------------------------------------------------------------------*/
+/**/
 
 $colors: (
     "primary": blue,
@@ -46,6 +53,10 @@ $selected-colors: (
     }
 }
 
+/**/
+/*PARTE 3 -----------------------------------------------------------------------------------------*/
+/**/
+
 $property-declarations: (
     "margin": (0.5, 0.75, 1, 1.25, 1.5),
     "padding": (0.5, 0.75, 1, 1.25, 1.5)
@@ -53,6 +64,7 @@ $property-declarations: (
 
 @each $property, $values in $property-declarations{
 
+    /*--- Propiedad #{$property} ---*/
     $tracker: 1;
     @each $value in $values{
         .#{$property}-#{$tracker} {
