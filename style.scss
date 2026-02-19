@@ -1,0 +1,64 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:color";
+
+$buttons: primary blue white, secondary gray black, danger red white;
+
+@each $button in $buttons {
+
+    .button-#{list.nth($button, 1)} {
+        background-color: list.nth($button, 2);
+        color: list.nth($button, 3);
+
+        &:hover {
+            background-color: color.adjust(list.nth($button, 2), $lightness: 15%);
+        }
+    }
+}
+
+$colors: (
+    "primary": blue,
+    "secondary": gray,
+    "danger": red,
+    "success": green,
+    "warning": yellow,
+    "info": cyan,
+    "light": lightgray,
+    "dark": black
+);
+$selected-colors: (
+    "primary",
+    "danger",
+    "success"
+);
+
+@each $color in $selected-colors {
+
+    .text-#{$color} {
+
+        $colorPrueba: map.get($colors, $color);
+        color: color.adjust($colorPrueba, $lightness: -10%);
+    }
+
+    .background-#{$color} {
+        $colorPrueba: map.get($colors, $color);
+        color: color.adjust($colorPrueba, $lightness: 20%);
+    }
+}
+
+$property-declarations: (
+    "margin": (0.5, 0.75, 1, 1.25, 1.5),
+    "padding": (0.5, 0.75, 1, 1.25, 1.5)
+);
+
+@each $property, $values in $property-declarations{
+
+    $tracker: 1;
+    @each $value in $values{
+        .#{$property}-#{$tracker} {
+            #{$property}: #{$value}rem;
+            $tracker: $tracker + 1;
+        }
+    }
+
+}
